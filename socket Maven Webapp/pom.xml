@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.turing</groupId>
+  <artifactId>socket</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>socket Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+<properties>
+  	<spring.version>4.3.3.RELEASE</spring.version>
+  	<jackson.version>2.8.3</jackson.version>
+  </properties>
+    <!-- socketJs start -->
+  <dependencies>
+    <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>javax.servlet-api</artifactId>
+		  <version>3.1.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+		   <groupId>org.springframework</groupId>
+		   <artifactId>spring-websocket</artifactId>
+		   <version>${spring.version}</version>
+		</dependency>
+		<dependency>
+		   <groupId>org.springframework</groupId>
+		   <artifactId>spring-messaging</artifactId>
+		   <version>${spring.version}</version>
+		</dependency>
+		<!-- socketJs end -->
+		
+		
+    	<!-- spring start -->
+    	<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-core</artifactId>
+		  <version>${spring.version}</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-web</artifactId>
+		  <version>${spring.version}</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-webmvc</artifactId>
+		  <version>${spring.version}</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-context-support</artifactId>
+		  <version>${spring.version}</version>
+		</dependency>
+		<!-- spring end -->
+  </dependencies>
+  
+  
+  <build> 
+    <finalName>socket</finalName>
+    <!--配置Maven 对resource文件 过滤 -->
+       <resources>
+           <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource> 
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.java</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+              <resource>
+                <directory>src/main/webapp</directory>
+                <includes>
+                    <include>**/*.css</include>
+                    <include>**/*.html</include>
+                    <include>**/*.js</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.jsp</include>
+                    <include>**/*.ttf</include>
+                    <include>**/*.woff</include>
+                    <include>**/*.woff2</include>
+                    <include>**/*.svg</include>
+                    <include>**/*.eot</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+  </build>
+</project>
